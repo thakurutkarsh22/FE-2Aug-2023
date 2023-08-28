@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
     email,
     doctor,
     location,
-    date
+    date,
   };
 
   console.log(payload, "payload");
@@ -29,4 +29,12 @@ form.addEventListener("submit", (event) => {
   console.dir(form);
 
   // makeReques("server").then(da)
+
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      "Content-type": "application/JSON",
+    },
+  });
 });
